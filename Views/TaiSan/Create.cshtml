@@ -1,0 +1,31 @@
+﻿@model TaiSan
+@{
+    ViewData["Title"] = "Thêm tài sản mới";
+}
+
+<h3>Thêm tài sản mới</h3>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label asp-for="MaLoai"></label><br />
+        <select asp-for="MaLoai" asp-items="ViewBag.MaLoai"></select>
+    </div>
+    <div>
+        <label asp-for="TenTs"></label><br />
+        <input asp-for="TenTs" /><br />
+        <span asp-validation-for="TenTs" style="color:red"></span>
+    </div>
+    <div>
+        <label asp-for="NguyenGia"></label><br />
+        <input asp-for="NguyenGia" type="text" /><br />
+        <span asp-validation-for="NguyenGia" style="color:red"></span>
+    </div>
+    <div>
+        <label asp-for="Anh"></label><br />
+        <input asp-for="Anh" /><br />
+        <span asp-validation-for="Anh" style="color:red"></span>
+    </div>
+    <div>
+        <input type="submit" value="Create" />
+    </div>
+</form>
